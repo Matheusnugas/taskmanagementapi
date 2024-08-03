@@ -13,13 +13,19 @@ services:
       - postgres_data:/var/lib/postgresql/data
 
   api:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
       - "3000:3000"
     depends_on:
       - postgres
     environment:
       DATABASE_URL: postgres://postgres:postgres@postgres:5432/task_management
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: npm run dev
 
 volumes:
   postgres_data:
