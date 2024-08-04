@@ -13,7 +13,6 @@ services:
       - postgres_data:/var/lib/postgresql/data
 
   api:
-    container_name: task-management-api
     build:
       context: .
       dockerfile: Dockerfile
@@ -23,6 +22,7 @@ services:
       - postgres
     environment:
       DATABASE_URL: postgres://postgres:postgres@postgres:5432/task_management
+      NODE_ENV: development
     volumes:
       - .:/app
       - /app/node_modules

@@ -1,12 +1,6 @@
 import { ApiPropertyOptional } from '@nestjs/swagger';
+import { IsOptional, IsString, IsEnum } from 'class-validator';
 import { Status } from '@prisma/client';
-import {
-  IsOptional,
-  IsString,
-  IsDateString,
-  IsEnum,
-  IsInt,
-} from 'class-validator';
 
 export class UpdateTaskDto {
   @ApiPropertyOptional({ description: 'Title of the task' })
@@ -21,20 +15,14 @@ export class UpdateTaskDto {
 
   @ApiPropertyOptional({
     description: 'Due date of the task',
-    type: String,
-    format: 'date-time',
+    example: '01/07/2025',
   })
   @IsOptional()
-  @IsDateString()
-  dueDate?: Date;
+  @IsString()
+  dueDate?: string;
 
-  @ApiPropertyOptional({ description: 'Status of the task', enum: Status })
+  @ApiPropertyOptional({ description: 'Status of the task' })
   @IsOptional()
   @IsEnum(Status)
   status?: Status;
-
-  @ApiPropertyOptional({ description: 'ID of the user assigned to the task' })
-  @IsOptional()
-  @IsInt()
-  userId?: number;
 }

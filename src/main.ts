@@ -10,11 +10,29 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe());
   app.setGlobalPrefix('api');
   app.useGlobalFilters(new HttpExceptionFilter());
+
   const config = new DocumentBuilder()
     .setTitle('API Documentation')
-    .setDescription('The API description')
+    .setDescription(
+      `This is the API for a Task Management system. Every task route requires the user to be authenticated. To get your Bearer token, create an account and login, and one will be provided to you. Don't forget to add your token to the Authorize field on Swagger API Docs, or if you're using Postman, test it like:
+
+      Bearer 9uasud98asudd198JASjasd9
+      
+      `,
+    )
     .setVersion('1.0')
-    .addTag('api')
+    .addBearerAuth(
+      {
+        description: `[just text field] Please enter token in following format: Bearer <JWT>`,
+        name: 'Authorization',
+        bearerFormat: 'Bearer',
+        scheme: 'Bearer',
+        type: 'http',
+        in: 'Header',
+      },
+      'access-token',
+    )
+
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api-docs', app, document);
