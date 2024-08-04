@@ -1,6 +1,6 @@
 # Task Management API
 
-### Proposal: Creating investment portfolios in different companies and investing in them!
+### Proposal: Task and user management API.
 
 ### Easy Setup Video Guide: https://www.youtube.com/watch?v=UmG87EpC-pI
 
