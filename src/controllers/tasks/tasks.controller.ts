@@ -10,7 +10,6 @@ import {
   Req,
   ForbiddenException,
   NotFoundException,
-  Headers,
 } from '@nestjs/common';
 import { TasksService } from '../../services/tasks/tasks.service';
 import { CreateTaskDto } from '../../dto/tasks/create-task.dto';
@@ -20,7 +19,6 @@ import {
   ApiOperation,
   ApiResponse,
   ApiBearerAuth,
-  ApiHeader,
 } from '@nestjs/swagger';
 import { Task } from '@prisma/client';
 import { JwtAuthGuard } from '../../guards/jwt-auth.guard';
@@ -52,11 +50,6 @@ export class TasksController {
   }
 
   @Get('user/:userId')
-  // @ApiHeader({
-  //   name: 'Authorization',
-  //   description: 'Authorization token',
-  //   required: true,
-  // })
   @ApiOperation({ summary: 'Get all tasks for a user' })
   @ApiResponse({ status: 200, description: 'Tasks successfully retrieved.' })
   @ApiResponse({ status: 403, description: 'Forbidden.' })
