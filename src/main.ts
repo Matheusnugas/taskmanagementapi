@@ -23,7 +23,7 @@ async function bootstrap() {
     .setVersion('1.0')
     .addBearerAuth(
       {
-        description: `[just text field] Please enter token in following format: Bearer <JWT>`,
+        description: `Please enter the Bearer token you got by signing in. Format: Bearer <JWT>`,
         name: 'Authorization',
         bearerFormat: 'Bearer',
         scheme: 'Bearer',
