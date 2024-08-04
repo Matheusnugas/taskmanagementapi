@@ -2,8 +2,7 @@
 
 ### Proposal: Task and user management API.
 
-### Easy Setup Video Guide: https://www.youtube.com/watch?v=Zx7PVbdsRHQ&feature=youtu.be
-
+### Easy Setup Video Guide: https://www.youtube.com/watch?v=Zx7PVbdsRHQ
 ## 1) What was used?
 
 - NestJS - https://nestjs.com/
