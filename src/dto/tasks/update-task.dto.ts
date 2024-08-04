@@ -1,6 +1,6 @@
 import { ApiPropertyOptional } from '@nestjs/swagger';
 import { IsOptional, IsString, IsEnum } from 'class-validator';
-import { Status } from '@prisma/client';
+import { TaskStatus } from './create-task.dto';
 
 export class UpdateTaskDto {
   @ApiPropertyOptional({ description: 'Title of the task' })
@@ -23,6 +23,6 @@ export class UpdateTaskDto {
 
   @ApiPropertyOptional({ description: 'Status of the task' })
   @IsOptional()
-  @IsEnum(Status)
-  status?: Status;
+  @IsEnum(TaskStatus)
+  status?: TaskStatus;
 }

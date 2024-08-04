@@ -1,6 +1,11 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsNotEmpty, IsString, IsOptional, IsEnum } from 'class-validator';
-import { Status } from '@prisma/client';
+
+export enum TaskStatus {
+  PENDING = 'PENDING',
+  IN_PROGRESS = 'IN_PROGRESS',
+  COMPLETED = 'COMPLETED',
+}
 
 export class CreateTaskDto {
   @ApiProperty({ description: 'Title of the task' })
@@ -20,8 +25,8 @@ export class CreateTaskDto {
 
   @ApiProperty({ description: 'Status of the task' })
   @IsNotEmpty()
-  @IsEnum(Status)
-  status: Status;
+  @IsEnum(TaskStatus)
+  status: TaskStatus;
 
   @ApiProperty({ description: 'User ID to whom the task is assigned' })
   @IsNotEmpty()
