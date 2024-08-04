@@ -22,7 +22,7 @@ Every time the project is taken down and restarted, all the PostgreSQL tables ar
 
 ### 2.1) Swagger API
 
-![Swagger API](https://i.imgur.com/ML3nTUB.png)
+![Swagger API](https://i.imgur.com/PCYUTG4.png)
 
 ## 3) Installation
 
@@ -45,7 +45,4 @@ http://localhost:3000/api-docs
 ### 3.4) Back-end runs by default on:
 http://localhost:3000/
 
-### 3.5) There is a global decorator before every route 
-```sh
-'/api/
-```sh
+### 3.5) There is a global '/api' decorator before every route.
