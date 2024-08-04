@@ -1,4 +1,4 @@
-# Galactic Trading Network
+# Task Management API
 
 ### Proposal: Creating investment portfolios in different companies and investing in them!
 
