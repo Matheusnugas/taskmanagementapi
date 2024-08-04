@@ -2,7 +2,7 @@
 
 ### Proposal: Task and user management API.
 
-### Easy Setup Video Guide: https://www.youtube.com/watch?v=UmG87EpC-pI
+### Easy Setup Video Guide: https://www.youtube.com/watch?v=Zx7PVbdsRHQ&feature=youtu.be
 
 ## 1) What was used?
 
