@@ -58,11 +58,6 @@ export class UsersController {
 
   @UseGuards(JwtAuthGuard)
   @ApiBearerAuth('access-token')
-  @ApiHeader({
-    name: 'Authorization',
-    description: 'Authorization token',
-    required: true,
-  })
   @Put(':id')
   @ApiOperation({ summary: 'Update a user' })
   @ApiResponse({ status: 200, description: 'User successfully updated.' })
@@ -73,7 +68,7 @@ export class UsersController {
     @Body() updateUserDto: UpdateUserDto,
     @Req() req: any,
   ): Promise<Omit<User, 'password'>> {
-    if (req.user.userId !== id) {
+    if (req.user.userId != id) {
       throw new ForbiddenException('You are not allowed to update this user');
     }
     return this.usersService.updateUser(+id, updateUserDto);
@@ -90,7 +85,7 @@ export class UsersController {
     @Param('id') id: number,
     @Req() req: any,
   ): Promise<Omit<User, 'password'>> {
-    if (req.user.userId !== id) {
+    if (req.user.userId != id) {
       throw new ForbiddenException('You are not allowed to delete this user');
     }
     return this.usersService.deleteUser(+id);

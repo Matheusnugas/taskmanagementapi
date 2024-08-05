@@ -39,7 +39,6 @@ export class TasksController {
     @Body() createTaskDto: CreateTaskDto,
     @Req() req: any,
   ): Promise<Task> {
-    console.log('Decoded User:', req.user);
     if (createTaskDto.userId !== req.user.userId) {
       throw new ForbiddenException(
         'You are not allowed to create a task for another user',
