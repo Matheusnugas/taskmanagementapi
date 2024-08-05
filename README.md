@@ -24,13 +24,13 @@ Every time the project is taken down and restarted, all the PostgreSQL tables ar
 ![Swagger API](https://i.imgur.com/PCYUTG4.png)
 
 ### 2.2) To test the API, first you must use the Create New User endpoint, and set up your credentials:
-![Swagger API](https://i.mgur.com/vXOoxzF.png)
+![Swagger API](https://i.imgur.com/vXOoxzF.png)
 
 ### 2.3) Then you must use the sign-in endpoint, using your registered credentials, so you can get the access Token:
 ![Swagger API](https://i.imgur.com/KoRlqpG.png)
 
 ### 2.4) On the top of the screen, click the Authorize button and add your access token to Authorize any further requests:
-![Swagger API](https://i.imgur.com/Ox41hqR/png)
+![Swagger API](https://i.imgur.com/Ox41hqR.png)
 
 ## 3) Installation
 
