@@ -53,7 +53,7 @@ export class UsersController {
   async findOne(
     @Param('id') id: number,
   ): Promise<Omit<User, 'password'> | null> {
-    return this.usersService.findOne(id);
+    return this.usersService.findOne(+id);
   }
 
   @UseGuards(JwtAuthGuard)
@@ -76,16 +76,11 @@ export class UsersController {
     if (req.user.userId !== id) {
       throw new ForbiddenException('You are not allowed to update this user');
     }
-    return this.usersService.updateUser(id, updateUserDto);
+    return this.usersService.updateUser(+id, updateUserDto);
   }
 
   @UseGuards(JwtAuthGuard)
   @ApiBearerAuth('access-token')
-  @ApiHeader({
-    name: 'Authorization',
-    description: 'Authorization token',
-    required: true,
-  })
   @Delete(':id')
   @ApiOperation({ summary: 'Delete a user' })
   @ApiResponse({ status: 200, description: 'User successfully deleted.' })
@@ -98,6 +93,6 @@ export class UsersController {
     if (req.user.userId !== id) {
       throw new ForbiddenException('You are not allowed to delete this user');
     }
-    return this.usersService.deleteUser(id);
+    return this.usersService.deleteUser(+id);
   }
 }
