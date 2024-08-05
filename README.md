@@ -25,14 +25,14 @@ Every time the project is taken down and restarted, all the PostgreSQL tables ar
 
 ## 3) Installation
 
-### 3.1) Create an .env file in the root of the project for database access with the following:
+### 3.1) Create a .env file in the root of the project for database access with the following:
 
 ```sh
 DATABASE_URL="postgres://postgres:postgres@localhost:5432/task_management?schema=public"
 JWT_SECRET="SUPERSEGREDOSECRETO"
 ```
 
-### 3.2) In the root of the project and run "docker compose up" to start the docker containers.
+### 3.2) In the root of the project, run "docker compose up" to start the docker containers.
 
 ```sh
 docker compose up
